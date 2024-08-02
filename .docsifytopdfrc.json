@@ -1,0 +1,5 @@
+{
+	"contents": [ "docs/ru/config/_sidebar.md" ],
+	"pathToPublic": "docs.pdf",
+	"emulateMedia": "screen"
+}

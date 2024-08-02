@@ -117,7 +117,7 @@ declare class BlockSource {
 
 	/**
 	 * Sets biome id by coords
-	 * @param id - id of the biome to set
+	 * @param id id of the biome to set
 	 */
 	setBiome(x: number, z: number, biomeID: number): void;
 

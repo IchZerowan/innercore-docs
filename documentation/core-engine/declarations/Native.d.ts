@@ -1,6 +1,6 @@
 /**
  * Module containing enums that can make user code more readable
- * @deprecated from InnerCore Test 2.2.1b89, use new enum system instead
+ * @deprecated 2.2.1b89, use enums instead
  */
 declare namespace Native {
     /**

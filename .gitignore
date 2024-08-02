@@ -1,5 +1,6 @@
 /documentation/core-engine/headers/core-engine.d.ts
 /package-lock.json
-/node_modules
-/OLD
-/out
+/node_modules/
+/docs/README.md
+/docs/headers/
+/docs/api/

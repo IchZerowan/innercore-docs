@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inner Core Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Horizon, Inner Core and Core Engine documentation in one place.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <!-- Do not 'fix' non-relative src location, it will be overrided by Docsify alias to perform assignment. -->
+  <link rel="stylesheet" href="/src/themes/docsify-darklight-theme.min.css" title="docsify-darklight-theme" type="text/css" />
+  <!-- link rel="stylesheet" href="/src/themes/prism-vsc-dark-plus.css" type="text/css" /-->
+</head>
+<body>
+  <div id="app">Inner Core Docs</div>
+  <script>
+    (function (redirect, href) {
+      if (/^\/?en\//g.test(href)) {
+        return redirect('#' + href.replace('en', '').replace('//', ''));
+      }
+      if (href == 'ru' || href == '/ru') {
+        return redirect('#/ru/');
+      }
+      if (href == 'en' || href == '/en') {
+        return redirect('#/');
+      }
+    })(function (url) {
+      console.log(url);
+      var ua    = navigator.userAgent.toLowerCase(),
+        isIE    = ua.indexOf('msie') !== -1,
+        version = parseInt(ua.substr(4, 2), 10);
+
+      // Internet Explorer 8 and lower
+      if (isIE && version < 9) {
+        var link = document.createElement('a');
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+      }
+
+      // All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like Internet Explorer 8 & lower does)
+      else {
+        window.location.href = url;
+      }
+    }, (function () {
+      var href = window.location.href;
+      var index = href.indexOf('#');
+      return index === -1 ? '' : href.slice(index + 1);
+    })());
+  </script>
+  <script>
+    window.$docsify = {
+      name: 'Inner Core Docs',
+      repo: 'mineprogramming/innercore-docs',
+      loadSidebar: 'config/_sidebar.md',
+      loadNavbar: 'config/_navbar.md',
+      notFoundPage: {
+        '/ru/': 'ru/config/_404.md',
+        '/': 'config/_404.md'
+      },
+      subMaxLevel: 4,
+      relativePath: true,
+      nameLink: {
+        '/ru': '#/ru/',
+        '/': '#/'
+      },
+      autoHeader: true,
+      executeScript: true,
+      auto2top: true,
+      basePath: '/',
+      // noCompileLinks: [
+        // 'https?://(docs.mineprogramming.org|localhost).*)'
+      // ],
+      // Just redirects page to default language without loading config
+      // fallbackLanguages: ['en', 'ru'],
+      // Reserved for debugging purposes only!
+      alias: {
+        '/ru/(.*/|)config/(.*)': '/ru/config/$2',
+        '/.*/config/(.*)': '/config/$1',
+        '/.*/src/(.*)': '/src/$1'
+      },
+      themeable: {
+        readyTransition: true, // default
+        responsiveTables: true // default
+      },
+      // https://github.com/jperasmus/docsify-copy-code
+      copyCode: {
+        buttonText: {
+          '/ru/': 'Скопировать в буфер обмена',
+          '/': 'Copy to clipboard'
+        },
+        errorText: {
+          '/ru/': 'Ошибка',
+          '/': 'Error'
+        },
+        successText: {
+          '/ru/': 'Скопировано',
+          '/': 'Copied'
+        }
+      },
+      // https://jhildenbiddle.github.io/docsify-tabs
+      tabs: {
+        persist: true,     // default
+        sync: true,        // default
+        theme: 'classic',  // default
+        tabComments: true, // default
+        tabHeadings: true  // default
+      },
+      timeUpdater: {
+        text: '> Last Modify: {docsify-updated}',
+        formatUpdated: '{DD}.{MM}.{YYYY}'
+      },
+      plugins: [
+        function (hook, vm) {
+          hook.beforeEach(function (html) {
+            var url;
+            if (/githubusercontent\.com/.test(vm.route.file)) {
+              url = vm.route.file
+                .replace('raw.githubusercontent.com', 'github.com')
+                .replace(/\/gh-pages/, '/blob/gh-pages');
+            } else if (/jsdelivr\.net/.test(vm.route.file)) {
+              url = vm.route.file.replace('cdn.jsdelivr.net/gh', 'github.com').replace('@gh-pages', '/blob/gh-pages');
+            } else {
+              url = 'https://github.com/mineprogramming/innercore-docs/blob/gh-pages/' + vm.route.file;
+            }
+            if (/ru\//.test(vm.route.file)) {
+              return html + '\n\n[:memo: Изменить документ](' + url + ')';
+            }
+            return html + '\n\n[:memo: Edit Document](' + url + ')';
+          });
+        }
+      ]
+    };
+  </script>
+  <script src="/src/docsify.min.js"></script>
+  <script src="/src/themes/docsify-darklight-theme.min.js"></script>
+  <script src="/src/syntax/prism-json.min.js"></script>
+  <script src="/src/syntax/prism-jsonp.min.js"></script>
+  <script src="/src/syntax/prism-python.min.js"></script>
+  <script src="/src/syntax/prism-markdown.min.js"></script>
+  <script src="/src/syntax/prism-bash.min.js"></script>
+  <script src="/src/syntax/prism-batch.min.js"></script>
+<script src="//localhost:35729/livereload.js?snipver=1" async="" defer=""></script></body>
+</html>

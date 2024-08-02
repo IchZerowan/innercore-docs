@@ -30,7 +30,7 @@ declare module com {
                              */
                             export type BitmapTypes = string | string[] | android.graphics.Bitmap | android.graphics.Bitmap[];
                             /**
-                             * There are 12 types of UI elements given by InnerCore, and you can also create your custom ones.
+                             * There are 12 types of UI elements given by Inner Core, and you can also create your custom ones.
                              * Each element type has its own specific description object.
                              * These description objects are all inherited from this [[BasicElementDescription]].
                              * It means that each element must have coords on the GUI by X, Y, and additionally Z axis,
@@ -42,7 +42,7 @@ declare module com {
                                 [key: string]: any
                             }
                             /**
-                             * This is the base Java abstract class, which are all InnerCore element types inherited from.
+                             * This is the base Java abstract class, which are all Inner Core element types inherited from.
                              * In Java, to create custom element types, you can inherit your element class from this one as well.
                              * Whereas in JavaScript, you should use "custom" element type in description object,
                              * where you can specify custom behavior for different events.

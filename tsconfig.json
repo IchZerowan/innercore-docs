@@ -1,14 +1,14 @@
 {
-    "compilerOptions": {
-      "target": "ES5",
-      "lib": [
-        "ES6"
-      ]
-    },
-    "include": [
-      "documentation/core-engine/headers/core-engine.d.ts"
-    ],
-    "exclude": [
-      "documentation/static/**",
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": [
+      "ES6"
     ]
+  },
+  "include": [
+    "documentation/core-engine/headers/core-engine.d.ts"
+  ],
+  "exclude": [
+    "docs/**",
+  ]
 }

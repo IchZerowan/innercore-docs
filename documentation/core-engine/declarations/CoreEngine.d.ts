@@ -183,7 +183,7 @@ declare function ConfigureMultiplayer(args: { name: string, version: string, isC
 declare type ArmorType = "helmet" | "chestplate" | "leggings" | "boots";
 
 /**
- * Default render templates used inside of InnerCore,
+ * Default render templates used inside of Inner Core,
  * currently there are only default armor models
  */
 declare type DefaultRenderTemplate = ArmorType;

@@ -1,9 +1,11 @@
 {
   "name": "core-engine-api",
-  "version": "2.0.0",
-  "description": "InnerCore Docs v2",
+  "displayName": "Inner Core Docs",
+  "version": "2.1.0",
+  "description": "Horizon, Inner Core and Core Engine documentation in one place.",
   "devDependencies": {
-    "docsify-cli": "^4.4.3",
+    "docsify-cli": "^4.4.4",
+    "docsify-pdf-converter": "^2.0.7",
     "grunt": "^1.4.1",
     "grunt-cli": "^1.4.3",
     "grunt-contrib-concat": "^2.0.0",
@@ -16,10 +18,10 @@
     "underscore.string": "^3.3.6"
   },
   "scripts": {
-    "serve-docs": "docsify serve ./documentation/static",
-    "serve-out": "docsify serve ./out",
+    "serve": "docsify serve ./docs",
     "build": "grunt docs_api",
-    "build-serve": "npm run build && npm run serve-out"
+    "build-serve": "npm run build && npm run serve",
+    "export": "docsify-pdf-converter"
   },
   "repository": {
     "type": "git",

@@ -1,6 +1,6 @@
 /**
  * Module to create custom enchantments.
- * Available starting from InnerCore 2.2.1b105
+ * @since 2.2.1b105
  */
 declare namespace CustomEnchant {
 
